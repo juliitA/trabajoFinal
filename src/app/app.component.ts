@@ -13,7 +13,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MensajesComponent, DatosComponent, PersonasComponent, HeaderComponent, FooterComponent, MovieListComponent, MovieItemComponent, SearchBarComponent],
+  imports: [MensajesComponent, DatosComponent, PersonasComponent, HeaderComponent, FooterComponent, MovieListComponent, MovieItemComponent, SearchBarComponent, PersonasComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

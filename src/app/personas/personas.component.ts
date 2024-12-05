@@ -1,5 +1,7 @@
 import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
+import { PersonasDataService } from '../personas-data.service';
+import { Personas } from '../personas';
 
 @Component({
   selector: 'app-personas',
@@ -9,10 +11,9 @@ import { Component } from '@angular/core';
   styleUrl: './personas.component.css'
 })
 export class PersonasComponent {
-  items = [
-    {nombre: 'Pablo', edad: 23, profesion: 'Cocinero', pais: 'Argentina'},
-    {nombre: 'Ana', edad: 32, profesion: 'Diseñadora', pais: 'Chile'},
-    {nombre: 'Juan', edad: 29, profesion: 'Arquitecto', pais: 'Mexico'},
-    {nombre: 'Maria', edad: 37, profesion: 'Abogada', pais: 'Colombia'}
-  ];
+  items: Personas[];
+
+  constructor(private personasDataService: PersonasDataService) {
+    this.items = this.personasDataService.getPersonas();
+  }
 }
